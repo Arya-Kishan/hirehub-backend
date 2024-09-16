@@ -18,7 +18,7 @@ exports.getAllPosts = async (req, res) => {
             select: { '_id': 1, 'name': 1 },
         }).skip(10 * page).limit(10);
 
-        let totalCount = await Post.find().count();
+        let totalCount = await Post.find().countDocuments();
         console.log(totalCount);
 
         res.set("x-total-post", totalCount)

@@ -59,7 +59,7 @@ exports.getAllJob = async (req, res) => {
 
         }
 
-        let totalDocs = await totalQuery.count()
+        let totalDocs = await totalQuery.countDocuments()
         console.log(totalDocs);
 
         query = await query.skip(10 * page).limit(10);
